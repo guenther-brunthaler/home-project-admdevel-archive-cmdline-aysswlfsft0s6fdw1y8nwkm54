@@ -1,0 +1,11 @@
+One-liners which might be useful again.
+
+Every file normally contains two lines:
+
+* The first is a real comment and shortly describes what the one-liner does.
+
+* The second line is the actual one-liner, commented out for security.
+
+The one-liners in this repository are intended to be useful for both administative users and un-privileged users.
+
+One-liners only useful for privileged users should not be put here.

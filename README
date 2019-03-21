@@ -1,4 +1,4 @@
-One-liners which might be useful again.
+Linux one-liners which might be useful again.
 
 Every file normally contains two lines:
 
@@ -9,3 +9,15 @@ Every file normally contains two lines:
 The one-liners in this repository are intended to be useful for both administative users and un-privileged users.
 
 One-liners only useful for privileged users should not be put here.
+
+This repository only contains one-liners for the POSIX shell. Bash-extensions (or those of other shells) shall *not* be used.
+
+Therefore, the scripts should for example run without any change in bash, dash and BusyBox ash, ksh and zsh.
+
+However, they might be Linux-specific and use non-standardized features like "date +%s" or "stat -c", altough such Linux-specifics should be avoided if a POSIX utility can do the same job.
+
+In order to use such one-liners, in Bash you can use
+
+$ history -r /path/to/oneliner.sh
+
+in order to append the one-liner the shell command history. Then go can go back to the (new) last history entry, customize the command if necessary, un-comment it, and execute it.

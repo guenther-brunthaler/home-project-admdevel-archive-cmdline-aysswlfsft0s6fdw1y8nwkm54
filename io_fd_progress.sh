@@ -1,2 +1,2 @@
-# Report file decriptor througput in 5 s intervals as MiB/s
-#f=/proc/28894/fdinfo/1;t=0;while :;do p=`awk '/pos/{print $NF}' $f`;n=`date +%s`;if [ $t = 0 ];then t=$n;o=$p;else echo `echo "scale=2;($p-$o)/($n-$t)/2^20"|bc` MiB/s;fi;sleep 5;done
+# Report file decriptor offset in 29 s intervals as GB/s
+#f=/proc/9709/fdinfo/1;while test -e "$f";do p=`awk '/pos/{print $NF}' $f`;echo `echo "scale=2;$p/10^9"|bc` GB;sleep 20;done

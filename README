@@ -1,23 +1,33 @@
-Linux one-liners for priviliged and normal users which might be useful again.
+Linux command lines (mostly, but not necessarily one-liners) for privileged and normal users alike which might be useful again.
 
-Every file normally contains two lines:
+The file names shall have the extension ".sh".
 
-* The first is a real comment and shortly describes what the one-liner does.
+Every file normally contains at least two lines:
 
-* The second line is the actual one-liner, commented out for security.
+* The first is a real comment and shortly describes what the one-liner does. No shebang line is used. Put a space after the '#' in order to distinguish the line from ones which have just been commented out because they are dangerous.
 
-The one-liners in this repository are intended to be useful for both administative users and un-privileged users.
+* The remaining lines contain the actual command lines, commented out for security if they do something really dangerous or must be customized at any cost before being used.
 
-One-liners only useful for privileged users should not be put here.
+* The commands may use example values which are only useful on a particular installation or dummy placeholders which need to be customized before the command will be of any use. This should be commented at the end of the respective line, or on a preceding comment line.
 
-This repository only contains one-liners for the POSIX shell. Bash-extensions (or those of other shells) shall *not* be used.
+* If a file contains multiple groups of only loosely-related or unrelated command lines, add a comment line explaining what the group does before every group.
+
+* Copyright and version information should be avoided, but can be added in separate lines which are commented out twice, i. e. something like "## Version 2019.42".
+
+The command lines in this repository are intended to be useful for privileged and normal users alike.
+
+Command lines only useful for privileged users should not be put here.
+
+This repository only contains command lines for the POSIX shell. Bash-extensions (or those of other shells) shall *not* be used.
 
 Therefore, the scripts should for example run without any change in bash, dash and BusyBox ash, ksh and zsh.
 
 However, they might be Linux-specific and use non-standardized features like "date +%s" or "stat -c", altough such Linux-specifics should be avoided if a POSIX utility can do the same job.
 
-In order to use such one-liners, in Bash you can use
+In order to use such command lines, in Bash you can use
 
 $ history -r /path/to/oneliner.sh
 
-in order to append the one-liner the shell command history. Then go can go back to the (new) last history entry, customize the command if necessary, un-comment it, and execute it.
+in order to append the command lines to the shell command history. Then go can go back to the (new) last history entry, customize the command if necessary, un-comment it if they are currently commented out, and finally execute it.
+
+If the file contains multiple command lines instead of a single one, one might also execute then with Bash's [Ctrl]+[o] in order to execute them in sequence.
